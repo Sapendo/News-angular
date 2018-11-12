@@ -1,0 +1,41 @@
+<div class="searchPanel">
+  <div class="requestView">
+    <label>Search by: </label>
+    <mat-radio-group>
+      <mat-radio-button *ngFor="let radioButton of radioButtons"
+        (click)=onClick(radioButton)
+        [value]="radioButton"
+        [checked]="radioButton === 'Countries'">{{radioButton}}</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <form (ngSubmit)=sendRequest(form.value) #form="ngForm">
+    <mat-form-field *ngIf="isShow" class="searchPanel-element">
+      <mat-select placeholder="Countries" class="form-control" name="country" ngModel>
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let country of countries" [value]="country.abbr">
+          {{country.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="isShow" class="searchPanel-element">
+      <mat-select placeholder="Categories" class="form-control" name="category" ngModel>
+          <mat-option>None</mat-option>
+        <mat-option *ngFor="let category of categories" [value]="category">
+          {{category}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="!isShow" class="searchPanel-element">
+      <mat-select placeholder="Sources" class="form-control" name="sources" ngModel>
+          <mat-option>None</mat-option>
+        <mat-option *ngFor="let source of sources" [value]="source.abbr">
+          {{source.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="searchPanel-element">
+      <input type="search" matInput placeholder="For example: BTC" class="form-control" name="q" ngModel>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Send</button>
+  </form>
+</div>

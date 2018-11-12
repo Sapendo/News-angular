@@ -1,0 +1,38 @@
+.news {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(223, 215, 215, 0.623);
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.news--title {
+    font: 20px bold Arial, sans-serif;
+    margin: 0 0 10px;
+}
+
+.news--info {
+    display: flex;
+    margin-left: 0;
+}
+
+.news--image {    
+    margin-right: 10px;
+    position: relative;
+    width: 200px;
+    height: 100px;
+    border-radius:3px;
+}
+.news--image > img {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    max-width:100%;
+    max-height: 100%;
+}
+
+.news--content {
+    flex-shrink: 10;
+    margin: 0;
+}

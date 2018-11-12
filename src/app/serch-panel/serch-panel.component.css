@@ -1,0 +1,28 @@
+.searchPanel {
+    background-color: rgb(235, 217, 217);
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.requestView {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 220px;
+}
+mat-radio-group {    
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+}
+
+form {
+    display: flex;
+    min-width: 800px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    height: 35px;
+}

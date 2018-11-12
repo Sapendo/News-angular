@@ -1,0 +1,11 @@
+<div class="news">
+  <h1 class="news--title">{{news.title}}</h1>
+  <div class="news--info">
+    <div class="news--image" *ngIf="news.urlToImage">
+      <img *ngIf="news.urlToImage" src={{news.urlToImage}} alt={{news.title}}>
+    </div>
+    <p class="news--content">{{newsContent}}
+      <a class="news--content__link" href={{news.url}}>Read more...</a>
+    </p>
+  </div>
+</div>
